@@ -1,0 +1,64 @@
+header {
+  background-color: #3eab66;
+  color: #19542f;
+  display: flex;
+  align-items: baseline;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+}
+
+header > div:nth-child(3) {
+  margin-left: auto;
+}
+
+.menu-title {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 3rem;
+  color: #e3e85d;
+}
+
+.menu-options {
+  display: flex;
+  align-content: space-between;
+  font-family: "Shadows Into Light", cursive;
+  text-transform: uppercase;
+}
+
+.menu-option {
+  border-bottom: solid 0.1rem transparent;
+  cursor: pointer;
+  transition: border 1s, color 1s;
+  font-weight: bold;
+}
+
+.menu-option:hover {
+  color: #e3e85d;
+  border-bottom: solid 0.1rem #e3e85d;
+}
+
+.shopping-options {
+  display: flex;
+}
+
+.shopping-cart {
+  font-size: 1.5rem;
+}
+
+.shopping-cart-item {
+  position: relative;
+  font-size: 1rem;
+  color: #e3e85d;
+  top: -1rem;
+  left: -0.5rem;
+}
+
+.shopping-list {
+  position: absolute;
+  font-size: 1rem;
+  top: 4rem;
+  background-color: #e3e85d;
+}
+
+.account-options {
+  display: flex;
+  font-size: 1.5rem;
+}

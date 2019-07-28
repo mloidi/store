@@ -1,9 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+//import logo from "./logo.svg";
+import "./css/App.css";
+import "./css/Common.css";
+import Menu from "./components/menu/Menu";
 
 function App() {
   return (
+    <Menu />
+    /*
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +24,7 @@ function App() {
         </a>
       </header>
     </div>
+    */
   );
 }
 
