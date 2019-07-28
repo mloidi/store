@@ -6,6 +6,10 @@ import Icon from "../common/Icon";
 const Menu = () => {
   const [showShoppingList, setShowShoppingList] = useState(false);
 
+  const [shoppingCart] = useState([
+    { name: "Item 1", quantity: "2", prize: "2" }
+  ]);
+
   return (
     <header className="plr-1 pb-1">
       <div className="menu-title">Mikel & Nicole Store</div>
@@ -19,7 +23,10 @@ const Menu = () => {
       <div className="mlr-1 shopping-options">
         <div
           className="shopping-cart"
-          onMouseMove={() => {
+          onMouseEnter={() => {
+            setShowShoppingList(!showShoppingList);
+          }}
+          onMouseLeave={() => {
             setShowShoppingList(!showShoppingList);
           }}
         >
@@ -27,13 +34,15 @@ const Menu = () => {
         </div>
         {showShoppingList && (
           <div className="p-1 shopping-list">
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 4</div>
+            {shoppingCart &&
+              shoppingCart.map(cartItem => (
+                <div>
+                  {cartItem.name}({cartItem.quantity}) -> {cartItem.prize}{" "}
+                </div>
+              ))}
           </div>
         )}
-        <div className="p-05 shopping-cart-item">2</div>
+        <div className="p-05 shopping-cart-item">{shoppingCart.length}</div>
       </div>
       <div className="mlr-1 account-options">
         <Icon icon="faUser" />
