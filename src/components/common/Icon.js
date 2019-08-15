@@ -53,7 +53,8 @@ import {
   faUniversity,
   faPhone,
   faAddressCard,
-  faShoppingCart
+  faShoppingCart,
+  faCartPlus
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -197,6 +198,8 @@ const Icon = props => (
       <FontAwesomeIcon icon={faAddressCard} />
     ) : props.icon === "faShoppingCart" ? (
       <FontAwesomeIcon icon={faShoppingCart} />
+    ) : props.icon === "faCartPlus" ? (
+      <FontAwesomeIcon icon={faCartPlus} />
     ) : props.icon === "faCoffee" ? (
       <FontAwesomeIcon icon={faCoffee} />
     ) : (

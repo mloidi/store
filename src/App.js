@@ -1,30 +1,32 @@
-import React from "react";
-//import logo from "./logo.svg";
-import "./css/App.css";
-import "./css/Common.css";
-import Menu from "./components/menu/Menu";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import './css/App.css';
+import './css/Common.css';
+import { ContextProvider } from './globalState/state';
+import Menu from './components/menu/Menu';
+import Home from './components/home/Home';
+import WeeklySales from './components/sales/WeeklySales';
+import OrderOnline from './components/online/OrderOnline';
+import BrowseProducts from './components/products/BrowseProducts';
+import NotFound from './components/common/NotFound';
+import ProductDetail from './components/products/ProductDetail';
 
 function App() {
   return (
-    <Menu />
-    /*
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    */
+    <ContextProvider>
+      <Router>
+        <Menu />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/weekly-sales" component={WeeklySales} />
+          <Route exact path="/order-online" component={OrderOnline} />
+          <Route exact path="/brose-products" component={BrowseProducts} />
+          <Route exact path="/weekly-sales/:slug/" component={ProductDetail} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </ContextProvider>
   );
 }
 
