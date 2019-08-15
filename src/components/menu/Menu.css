@@ -57,39 +57,17 @@ header > div:nth-child(2) {
   display: flex;
 }
 
-.shopping-cart {
+.menu-cart {
   font-size: 1.5rem;
   cursor: pointer;
   transition: opacity 0.15s ease;
 }
 
-.shopping-cart:hover {
+.menu-cart:hover {
   opacity: 0.5;
 }
 
-
-.count {
-  display: block;
-  position: relative;
-  transition: all 0.4s;
-  backface-visibility: hidden;
-}
-.count-enter {
-  transform: scale(4) rotateX(0.5turn);
-}
-.count-enter-active {
-  transform: rotateX(0);
-}
-.count-exit {
-  top: 0;
-  position: absolute;
-  transform: rotateX(0);
-}
-.count-exit-active {
-  transform: scale(4) rotateX(0.5turn);
-}
-
-.shopping-cart-item {
+.menu-cart-total-items {
   position: relative;
   font-size: 1rem;
   color: var(--main-menu-aux-color);
@@ -97,7 +75,8 @@ header > div:nth-child(2) {
   left: -0.5rem;
 }
 
-.shopping-list {
+
+.menu-cart-list {
   position: absolute;
   font-size: 1rem;
   border: 0.1rem solid var(--main-menu-aux-color);
@@ -108,7 +87,7 @@ header > div:nth-child(2) {
   z-index: 9;
 }
 
-.shopping-cart-open {
+.menu-cart-open {
   width: 40%;
   animation-name: shopping-cart-open;
   animation-duration: 2s;
@@ -126,7 +105,7 @@ header > div:nth-child(2) {
   }
 }
 
-.shopping-cart-close {
+.menu-cart-close {
   animation-name: shopping-cart-close;
   animation-duration: 2s;
   width: 0%;
@@ -147,29 +126,4 @@ header > div:nth-child(2) {
 .account-options {
   display: flex;
   font-size: 1.5rem;
-}
-
-.shopping-list-line {
-  display: flex;
-  flex-direction: row;
-}
-
-.shopping-list-line > div:nth-child(3) {
-  margin-left: auto;
-}
-
-/* .shopping-list-line > div:nth-child(2) {
-  margin: auto;
-} */
-
-.shopping-list-line-item {
-  flex: 70%;
-}
-
-.shopping-list-line-quantity {
-  flex: 10%;
-}
-
-.shopping-list-line-price {
-  flex: 20%;
 }

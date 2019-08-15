@@ -6,7 +6,7 @@ import Icon from '../common/Icon';
 import { CartContext } from '../../globalState';
 
 const ProductCard = ({ product, history }) => {
-  const { addToCart } = useContext(CartContext);
+  const { add } = useContext(CartContext);
   const [addingProduct, setAddingProduct] = useState({ id: 1 });
 
   const addingProductAnimation = <div key={addingProduct.id} />;
@@ -32,7 +32,7 @@ const ProductCard = ({ product, history }) => {
         className="product-button-add-cart"
         onClick={() => {
           setAddingProduct({ id: Math.random() });
-          addToCart(product);
+          add(product);
         }}
       >
         <Icon icon="faCartPlus" />

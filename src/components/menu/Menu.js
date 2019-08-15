@@ -4,9 +4,10 @@ import { NavLink as Link } from 'react-router-dom';
 import './Menu.css';
 import Icon from '../common/Icon';
 import { CartContext } from '../../globalState';
+import Cart from '../cart/Cart';
 
 const Menu = () => {
-  const { cart, showCart, setShowCart, addToCart } = useContext(CartContext);
+  const { cart, showCart, setShowCart } = useContext(CartContext);
   const [showShoppingList, setShowShoppingList] = useState(false);
 
   const menu = [
@@ -55,7 +56,7 @@ const Menu = () => {
       </div>
       <div className="mlr-1 shopping-options">
         <div
-          className="shopping-cart"
+          className="menu-cart"
           onClick={() => {
             setShowCart(true);
             setShowShoppingList(!showShoppingList);
@@ -63,40 +64,16 @@ const Menu = () => {
         >
           <Icon icon="faShoppingCart" />
         </div>
-        <div key={cart.totalItems} className="p-05 shopping-cart-item">
-          {cart.totalItems}
-        </div>
+        <div className="p-05 menu-cart-total-items">{cart.totalItems}</div>
         {showCart && (
           <div
             className={
               showShoppingList
-                ? 'p-1 shopping-list shopping-cart-open'
-                : 'p-1 shopping-list shopping-cart-close'
+                ? 'p-1 menu-cart-list menu-cart-open'
+                : 'p-1 menu-cart-list menu-cart-close'
             }
           >
-            {cart &&
-              cart.products.map(productInTheCart => (
-                <div className="shopping-list-line" key={productInTheCart._id}>
-                  <div className="shopping-list-line-item">
-                    {productInTheCart.name}
-                  </div>
-                  <div className="shopping-list-line-quantity">
-                    <button>-</button>
-                    <span>{productInTheCart.quantity}</span>
-                    <button
-                      onClick={() => {
-                        addToCart(productInTheCart);
-                      }}
-                    >
-                      +
-                    </button>
-                  </div>
-                  <div className="shopping-list-line-price">
-                    <span>{'$' + productInTheCart.totalPrice}</span>
-                  </div>
-                </div>
-              ))}
-            <div>{'$' + cart.totalPrice} </div>
+            <Cart />
           </div>
         )}
       </div>

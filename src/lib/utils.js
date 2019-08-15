@@ -6,3 +6,7 @@ export const getToken = () => {
   if (typeof authToken === 'string' && authToken === 'null') return null;
   return authToken;
 };
+
+export const twoDecimals = number => {
+  return parseFloat(Math.round(number * 100) / 100).toFixed(2);
+};

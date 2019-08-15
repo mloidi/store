@@ -1,0 +1,38 @@
+.cart-list-line {
+  display: grid;
+  grid-template-columns: 70% 20% 10%;
+  margin: 1rem;
+}
+
+.cart-list-line > div:nth-child(3) {
+  margin-left: auto;
+}
+
+.cart-list-line-item {
+  font-size: 1rem;
+}
+
+.cart-list-line-quantity {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  grid-gap: 0.5rem;
+}
+
+.cart-list-line-price {
+  font-size: 1rem;
+}
+
+.cart-button {
+  color: var(--main-border-color);
+  background-color: transparent;
+  cursor: pointer;
+  border: 0.1rem solid transparent;
+  transition: color 0.5s;
+}
+
+.cart-button:hover,
+.cart-button:focus {
+  color: var(--main-txt-color);
+  background-color: var(--main-border-color);
+}
