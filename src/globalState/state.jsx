@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProductProvider, CartProvider } from '.';
+import { ProductProvider, CartProvider, DashboardProvider } from '.';
 
 function ProviderComposer({ context, children }) {
   return context.reduceRight(
@@ -11,7 +11,9 @@ function ProviderComposer({ context, children }) {
 
 function ContextProvider({ children }) {
   return (
-    <ProviderComposer context={[<ProductProvider />, <CartProvider />]}>
+    <ProviderComposer
+      context={[<ProductProvider />, <CartProvider />, <DashboardProvider />]}
+    >
       {children}
     </ProviderComposer>
   );

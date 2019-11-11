@@ -1,15 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, {  useContext } from 'react';
 import { withRouter } from 'react-router';
-import { CSSTransitionGroup } from 'react-transition-group';
+// import { CSSTransitionGroup } from 'react-transition-group';
 
 import Icon from '../common/Icon';
 import { CartContext } from '../../globalState';
 
 const ProductCard = ({ product, history }) => {
   const { add } = useContext(CartContext);
-  const [addingProduct, setAddingProduct] = useState({ id: 1 });
+  // const [addingProduct, setAddingProduct] = useState({ id: 1 });
 
-  const addingProductAnimation = <div key={addingProduct.id} />;
+  // const addingProductAnimation = <div key={addingProduct.id} />;
 
   return (
     <div className="product-card p-1 m-1">
@@ -31,19 +31,19 @@ const ProductCard = ({ product, history }) => {
       <button
         className="product-button-add-cart"
         onClick={() => {
-          setAddingProduct({ id: Math.random() });
+          // setAddingProduct({ id: Math.random() });
           add(product);
         }}
       >
         <Icon icon="faCartPlus" />
       </button>
-      <CSSTransitionGroup
+      {/* <CSSTransitionGroup
         transitionName="progressBar"
         transitionEnterTimeout={1000}
         transitionLeave={false}
       >
         {addingProductAnimation}
-      </CSSTransitionGroup>
+      </CSSTransitionGroup> */}
     </div>
   );
 };
